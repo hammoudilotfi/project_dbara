@@ -1,0 +1,9 @@
+swiftmailer:
+    url: '%env(MAILER_URL)%'
+    spool: { type: 'memory' }
+    delivery_addresses: ['lotfihammoudi384@gmail.com']
+    logging: true
+    stream_options:
+        ssl:
+            allow_self_signed: true
+            verify_peer: false
