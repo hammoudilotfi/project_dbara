@@ -1,0 +1,84 @@
+
+
+
+<!--login Area s t a r t-->
+
+<!-- End-of login Area -->
+
+
+<ngx-ui-loader></ngx-ui-loader>
+<div class="loginArea section-padding2 ">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a >Account</a></li>
+            <li class="breadcrumb-item"><a >Edit Account</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+    <div class="row">
+
+
+      <form class="col-xl-12 col-lg-12 login-Wrapper" (ngSubmit)="submit()">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">First Name</label>
+            <div class="input-form input-form2">
+              <input type="text" placeholder="First Name"  [ngModelOptions]="{standalone: true}" [(ngModel)]="data.nom" >
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Last Name</label>
+            <div class="input-form input-form2">
+              <input type="text" placeholder="Last Name" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.prenom"  >
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label class="infoTitle">Email</label>
+            <div class="input-form ">
+              <input type="text" placeholder="info.sai4ul@gmail.com" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.email"  >
+              <div class="icon"><i class="las la-envelope icon"></i></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Pin</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter PIN" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.pin"  >
+              <div class="icon"><i class="las la-lock icon"></i></div>
+
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Phone Number</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter Phone number"  [ngModelOptions]="{standalone: true}" [(ngModel)]="data.tel" >
+              <div class="icon"><i class="las la-phone icon"></i></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Sexe</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter Your sexe" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.sexe"  >
+              <div class="icon"><i class="las la-user icon"></i></div>
+
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="btn-wrapper text-center mt-50">
+              <button class="cmn-btn4 w-100 mb-60" type="submit">Register</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

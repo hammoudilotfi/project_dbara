@@ -1,0 +1,81 @@
+<!-- Modal -->
+<ngx-ui-loader></ngx-ui-loader>
+<div class="body-overlay-desktop"></div>
+<div class="modal-wrapper text-center">
+  <div class="close-icon">
+    <i class="las la-times"></i>
+  </div>
+  <h2 class="modialTittle">Post Your <span>Ad</span> ?</h2>
+  <div class="btn-wrapper">
+    <a href="add_listing_Details.html" class="cmn-btn02">Yes , Post ad</a>
+  </div>
+</div>
+
+<!--login Area s t a r t-->
+<div class="loginArea section-padding2">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 p-0 loginLeft-img">
+        <div class="loginLeft-img">
+          <div class="login-cap">
+            <h3 class="tittle">Sign-Up to eat</h3>
+<!--            <p class="pera">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>-->
+          </div>
+          <div class="login-img">
+            <img src="https://www.jamix.com/wp-content/uploads/2022/01/Recipe-view-laptop-800x500-1.jpg" alt="img" class="loginImg">
+          </div>
+        </div>
+      </div>
+
+      <form class="col-xl-7 col-lg-7 login-Wrapper" (ngSubmit)="onRegister()">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">First Name</label>
+            <div class="input-form input-form2">
+              <input type="text" placeholder="First Name" [(ngModel)]="user.nom" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Last Name</label>
+            <div class="input-form input-form2">
+              <input type="text" placeholder="Last Name" [(ngModel)]="user.prenom" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label class="infoTitle">Email</label>
+            <div class="input-form input-form2">
+              <input type="text" placeholder="info.sai4ul@gmail.com" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Password</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+              <div class="icon"><i class="las la-lock icon"></i></div>
+              <p>Password must be minimum 8 characters</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <label class="infoTitle">Phone Number</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter Phone number" [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}">
+              <div class="icon"><i class="las la-phone icon"></i></div>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="btn-wrapper text-center mt-50">
+              <button class="cmn-btn4 w-100 mb-60" type="submit">Register</button>
+              <a  class="cmn-btn-outline0  mb-20 w-100"><img src="assets/img/icon/googleIocn.svg" alt="images" class="icon"> Register With Google</a>
+              <a  class="cmn-btn-outline0 mb-20  w-100"><img src="assets/img/icon/fbIcon.svg" alt="images" class="icon">Register With Facebook</a>
+              <p class="sinUp"><span>Already have an account? </span><a routerLink="/" class="singApp">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<!-- End-of login Area -->

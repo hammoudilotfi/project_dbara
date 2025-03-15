@@ -1,0 +1,84 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="proDetails section-padding2  sectionBg1">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a >Chefs</a></li>
+            <li class="breadcrumb-item"><a >Tous les chefs</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+
+    <div class="row">
+
+      <section class="recentListing">
+        <div class="container">
+          <div class="row">
+            <div class="HelpSearch">
+
+                <div class="col-lg-6">
+                  <div class="SearchWrapper">
+                    <div class="searchBox-wrapper">
+                      <!-- Search Box -->
+                      <form class="search-box">
+                        <div class="input-form">
+                          <input  type="text" class="keyup-input" placeholder="Search" [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}">
+                          <!-- icon -->
+                          <div class="icon" (click)="filterChefs()">
+                            <i class="las la-search"></i>
+                          </div>
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+
+            <!--<div class="search-container">
+              <input type="text" [(ngModel)]="searchQuery" placeholder="Search chefs...">
+              <button (click)="filterChefs()">Search</button>
+            </div>-->
+            <div class="accountWrapper mb-24" *ngFor="let chefs of filteredData">
+              <div class="userProfile mb-24">
+                <div class="recentImg">
+                  <img src="{{chefs?.photo}}" height="100" width="100" alt="images">
+                </div>
+                <div class="recentCaption">
+                  <div class="cap">
+                    <h5><a href="#" class="featureTittle">{{chefs?.nom}} {{chefs?.prenom}}</a></h5>
+                    <p class="featureCap">{{chefs?.specialite}}</p>
+                  </div>
+                  <!--<div class="btn-wrapper">
+                    <a href="#" class="cmn-btn-outline2">Edit Profile</a>
+                  </div>-->
+                </div>
+              </div>
+              <!-- infoSingle -->
+              <div class="infoSingle">
+                <ul class="listing">
+<!--                  <li class="listItem"><i class="las la-map-marker-alt icon"></i>Ash Dr. San Jose, South Dakota</li>-->
+                  <li class="listItem"><i class="lar la-envelope-open icon"></i>{{chefs?.email}}</li>
+                  <li class="listItem"><i class="las la-phone icon"></i>{{chefs?.numero_telephone}}</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+</div>
+

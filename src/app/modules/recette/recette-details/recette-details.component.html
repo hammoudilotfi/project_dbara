@@ -1,0 +1,121 @@
+
+<ngx-ui-loader></ngx-ui-loader>
+
+<div id="allRecipes">
+  <div id="contenu">
+    <div class="partieLeft" >
+
+
+      <div class="zoneVideo" >
+        <div class="topForShare">
+          <a class="favorisrecette"><img src="https://dbara.tn/frontoffice/img/SVG/favoris120.png"></a>
+          <a class="vote_recette" (click)="addToPerfList(data?.id)">
+            <img src="https://dbara.tn/frontoffice/img/SVG/heart.png">
+            <span class="nbrVote"></span>
+          </a>
+          <a ><img src="https://dbara.tn/frontoffice/img/SVG/share.svg"></a>
+        </div>
+        <div><a data-poptrox="youtube,800x480" (click)="openYoutubeDialog(data?.video)" style="outline: 0px;">
+          <div class="hover-image"></div>
+          <div class="playIcon"></div>
+          <img class="demo" src="{{data?.photo}}"></a></div>
+      </div>
+      <div class="zoneIngredients zoneDes">
+        <h3>Rate DbaretChef</h3>
+        <p class="featureCap">User Voted for this item· <strong class="subCap">{{voteCounts?.note_count}}</strong></p>
+      <div class="btn-wrapper viewItems">
+        <select class="niceSelect mr-5" [(ngModel)]="selectedValue" style="height: 40px; margin-right: 10px">
+          <option *ngFor="let value of values" [value]="value">{{ value }}</option>
+        </select>
+        <button class="cmn-btn4 ml-5" (click)="submit(data.id)">Submit</button>
+      </div>
+      </div>
+
+      <div class="zoneIngredients zoneDes">
+        <h3>Description</h3>
+        <p>
+{{data?.description}}
+        </p>
+      </div>
+
+      <div class="zoneIngredients zoneApports">
+        <h3>Apports Nutritifs</h3>
+        <p>
+{{data?.apports_nutritifs}}
+        </p>
+      </div>
+
+      <div class="zoneIngredients">
+        <h3>Ingrédients</h3>
+        <ul>
+          <li *ngFor="let ingredient of data?.ingredients.split(',')">
+             {{ ingredient.trim() }}
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+    <div class="partieRight">
+      <div class="infosRecipe forWeb">
+        <div class="oneCol">
+          <h2>{{data?.nom}}</h2>
+        </div>
+        <div class="oneCol"><img src="https://dbara.tn/frontoffice/img/chef.png"> By {{data?.nom_chef}}</div>
+        <div class="oneCol"><font>{{data?.type}}</font></div>
+        <div id="desCol">
+          <div class="oneCol">
+            <div class="bottomCol">
+              <div class="forIMG"><img class="imgSVG" src=" https://dbara.tn/frontoffice/img/SVG/ic_ingredients.svg">
+              </div>
+              Niveau de difficulté : <span>{{data?.niv_difficulte}}</span><br>
+            </div>
+          </div>
+          <div class="oneCol">
+            <div class="bottomCol">
+              <div class="forIMG"><img class="imgSVG" src=" https://dbara.tn/frontoffice/img/SVG/ic_cuisson.svg"></div>
+              Temps de Préparation : <span>{{data?.temps_prepartion}}</span><br>
+            </div>
+          </div>
+          <div class="oneCol">
+            <div class="bottomCol">
+              <div class="forIMG"><img class="imgSVG" src=" https://dbara.tn/frontoffice/img/SVG/ic_nombre.svg"></div>
+              Nombre d’ingrédients : <span>{{data?.nombre_ingredient}}</span><br>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--      <div class="stepsRecipe">
+        <h3>Etapes De Préparation</h3>
+        <ul>
+          <li>1. Avant deux heures de la cuisson, rincer et égoutter les graines de borghol.
+          </li>
+          <li>2. Pour la sauce, faire revenir les oignons coupés dans l’huile d’olive, ajouter la tomate concentrée, la
+            Harissa et les épices.
+          </li>
+          <li>3. Puis ajouter l’Osbane et couvrir d’1 litre d’eau.
+          </li>
+          <li>4. Dans le haut du couscoussier, verser le borghol et laisser le cuire à la vapeur.
+          </li>
+          <li>5. Une fois votre préparation cuite, procéder au dressage de votre assiette.</li>
+        </ul>
+      </div>-->
+      <div class="topRecipes">
+            <h3>Other Recettes</h3>
+            <div class="content" style="display: block;" *ngFor="let other of otherRecipes">
+              <a routerLink="/recette/detail/{{other?.id}}"> <img src="{{other?.photo}}">
+              <div class="hover-image"></div>
+              <div class="nameRecipe">{{other?.nom}}</div>
+              <div class="nameCategory">Dbara Zemneya</div>
+            </a> </div>
+
+          </div>
+    </div>
+  </div>
+</div>
+<input class="copieText" id="textcopie" type="text" value="184">
+<ng-template #videoDialog>
+  <iframe width="100%" height="98.2%" [src]="currentVideoUrl" frameborder="0" allowfullscreen></iframe>
+</ng-template>
+
+

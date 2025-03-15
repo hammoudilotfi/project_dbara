@@ -1,0 +1,153 @@
+
+<ngx-ui-loader></ngx-ui-loader>
+
+  <!-- Hero Area S t a r t -->
+  <div class="sliderArea plr ">
+    <div class="slider-active">
+      <div class="single-slider heroPadding d-flex align-items-center">
+        <div class="container-fluid ">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-xxl-6 col-xl-7 col-lg-7 ">
+              <div class="heroCaption">
+                <h1 class="tittle" data-animation="fadeInUp" data-delay="0.1s"><span class="tittleBg">Iktib </span><span class="lineBrack">anything you want</span></h1>
+                <p class="pera" data-animation="fadeInUp" data-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur commodi consequatur delectus deleniti dicta facilis, fuga illo, impedit laborum laudantium nemo officia pariatur praesentium rem tempora temporibus, totam.</p>
+              </div>
+              <!-- form -->
+              <form action="#" class="search-box">
+                <!-- Show  -->
+                <div class="searchBox-wrapper">
+                  <div class="input-form" data-animation="fadeInRight" data-delay="0.4s">
+                    <input type="text" class="input keyup-input" placeholder="Search..." (keyup)="onKeyUp($event)">
+                  </div>
+                  <!-- search-suggestions -->
+                  <div class="category-searchbar search-showHide">
+                    <!-- Closed Icon -->
+                    <span class="closed-icon"><i class="las la-times"></i></span>
+                    <div class="search-suggestions" id="search_suggestions_wrap">
+                      <div class="search-inner">
+                        <div class="product-suggestion item-suggestions">
+                          <h6 class="item-title">
+                                                        <span>
+                                                            Dbaret El Chef
+                                                        </span>
+                            <a routerLink="/recette" target="_blank" id="search_result_all" class="showAll">Show all</a>
+                          </h6>
+                          <ul class="product-suggestion-list mt-4" id="search_result_products">
+                            <li class="list" *ngFor="let result of searchResults">
+                              <a routerLink="/recette/detail/{{result.id}}" class="item">
+                                <div class="product-image">
+                                  <img src="{{ result.photo }}" alt="img">
+                                </div>
+                                <div class="product-info">
+                                  <div class="product-info-top">
+                                    <h6 class="product-name">{{ result.nom }}</h6>
+                                  </div>
+                                  <div class="product-price">
+                                    <!-- Add your price and stock information here -->
+                                  </div>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End suggestions -->
+                </div>
+
+                <!--<div class="search-form" data-animation="bounceIn" data-delay="0.4s">
+                  <button class="search-Btn"><i class="las la-search"></i></button>
+                </div>-->
+              </form>
+            </div>
+            <div class="col-xxl-5 col-xl-5 col-lg-5">
+              <div class="hero-man d-none d-lg-block f-right" >
+                <img src="assets/img/hero/louis-hansel-v3OlBE6-fhU-unsplash.jpg" alt="images" class="tilt-effect " data-animation="fadeInRight" data-delay="0.2s">
+                <!--&lt;!&ndash; Shape 01&ndash;&gt;
+                <div class=" shapeHero shapeHero1" data-animation="fadeInLeft" data-delay="0.8s">
+                  <img src="assets/img/hero/Lovepik_com-400619744-japanese-sushi.png" alt="images" class="bouncingAnimation img-style" >
+                </div>
+                &lt;!&ndash; Shape 02&ndash;&gt;
+                <div class=" shapeHero shapeHero2" data-animation="fadeInDown" data-delay="0.6s">
+                  <img src="assets/img/hero/Lovepik_com-400619815-red-tuna-sashimi-for-japanese-cuisine.png" alt="images" class="routedOne img-style">
+                </div>
+                &lt;!&ndash; Shape 03&ndash;&gt;
+                <div class=" shapeHero shapeHero3" data-animation="fadeInRight" data-delay="0.5s">
+                  <img src="assets/img/hero/—Pngtree—kitchen kitchenware cooking utensils kitchen_3823097.png" alt="images" class="bounce-animate img-style">
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <!-- Search Box -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End-of Hero  -->
+  <!-- Services Area  S t a r t-->
+
+
+  <app-carousel-holder></app-carousel-holder>
+
+
+  <!-- End-of Services -->
+
+<!--  caroussel START-->
+
+  <section class="recentListing section-padding sectionBg1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-7 col-md-10 col-sm-10">
+          <div class="section-tittle text-center mb-50">
+            <h2 class="tittle  "><span class="shape"></span>Des recettes et astuces magiques qui vous changent la vie</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let recette of data">
+
+          <div class="content" style="display: block;">
+            <a routerLink="/recette/detail/{{recette.id}}">
+              <img src="{{recette.photo}}">
+              <div class="hover-image"></div>
+              <div class="playIcon"></div>
+              <div class="bottomForRecipe">
+                <div class="oneDetail">
+                  <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_ingredients.svg"></div>
+                  <font>Temperature<br>
+                    <span>{{recette.temperature}}°C</span></font> </div>
+                <div class="oneDetail">
+                  <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_cuisson.svg"></div>
+                  <font>Temps de cuisson<br>
+                    <span>{{recette.temps_prepartion}} MIN</span></font> </div>
+                <div class="oneDetail">
+                  <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_nombre.svg"></div>
+                  <font>Niveau de difficulté<br>
+                    <span>Moyen</span></font> </div>
+              </div>
+              <div class="nameRecipe">{{recette.nom}}</div>
+              <div class="nameCategory">Dbara Zemneya</div>
+            </a> </div>
+
+        </div>
+
+      </div>
+      <div class="row justify-content-center">
+      <div class="col-xl-8 col-lg-7 col-md-10 col-sm-10">
+        <div class="section-tittle text-center mb-50 mt-50">
+          <div class="btn-wrapper row justify-content-center">
+
+            <a routerLink="/recette" class="cmn-btn2 mb-10 wow fadeInRight" data-wow-delay="0.3s" style="width: 25%;">All Recipe </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  </section>
+
+<!--  End caroussel-->
+  <!-- Services Area  S t a r t-->

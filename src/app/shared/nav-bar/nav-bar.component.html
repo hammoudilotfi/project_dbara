@@ -1,0 +1,99 @@
+<nav class="header-style-01">
+  <div class="navbar navbar-area headerBg1 navbar-expand-lg  plr">
+    <div class="container-fluid container-two nav-container">
+      <div class="responsive-mobile-menu">
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo">
+            <img src="assets/img/logo/logo%20(1).png" alt="images">
+          </a>
+        </div>
+        <!-- Click Menu Mobile right menu -->
+        <a href="#0" class="click_show_icon"><i class="las la-ellipsis-v"></i> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bizcoxx_main_menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="NavWrapper">
+
+        <!-- Main Menu -->
+        <div class="collapse navbar-collapse" id="bizcoxx_main_menu">
+          <ul class="navbar-nav">
+            <li><a routerLink="/home">Home</a></li>
+            <li class="menu-item-has-children">
+              <a routerLink="/recette" class="menuArrow">Dbaret El Chef</a>
+              <ul class="sub-menu" >
+                <li *ngFor="let cat of data"><a routerLink="/recette/{{cat.id}}">{{cat.titre}}</a></li>
+              </ul>
+            </li>
+
+            <li><a routerLink="/dbara-reel">Dbara Reel</a></li>
+            <li><a routerLink="/dbara-live">Dbara Live</a></li>
+
+            <li><a (click)="openPopup()" style="cursor: pointer" >Jeu Concours</a></li>
+            <li><a  routerLink="/chef">Chefs</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Menu Right -->
+      <div class="nav-right-content">
+        <!-- new -->
+        <ul class="header-cart">
+          <li class="single chatBar">
+
+            <!-- Chat List Wrapper -->
+
+            <!-- end Chat List -->
+          </li>
+<!--          <li class="single"><a href="wish_list.html" class="heart"><i class="lar la-heart icon"></i></a></li>-->
+          <li class="single userAccount">
+            <button class="user" (click)="toggleUserMenu()"><i class="las la-user-alt"></i></button>
+            <!-- <button class="user"></button> -->
+
+            <!--
+                After Logged in
+                User AC Wrapper
+            -->
+            <div class="userAccount-wrapper" *ngIf="isUserMenuOpen">
+              <h6 class="ac-title">User Account</h6>
+              <ul class="ac-list">
+                <li class="list">
+                  <a class="list-title" routerLink="/my-account"> <i class="lar la-user-circle icon"></i> My Account </a>
+                </li>
+                <li class="list">
+                  <a class="list-title" routerLink="/wishlist"><i class="lar la-heart icon"></i> Wishlist </a>
+                </li>
+                <li class="list">
+                  <a class="list-title" (click)="logOut()"> <i class="las la-sign-out-alt icon"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+
+            <!--
+                Before Logged in
+                User AC Wrapper
+            -->
+            <!-- <div class="userAccount-wrapper">
+                <h6 class="ac-title">User Account</h6>
+                <ul class="ac-list">
+                    <li class="list">
+                        <a class="list-title" href="#"> <i class="las la-lock icon"></i> Login / Sin-Up</a>
+                    </li>
+                </ul>
+            </div> -->
+
+            <!-- End User AC -->
+          </li>
+          <!--<li class="single">
+            <div class="btn-wrapper">
+              <a href="#"  class="cmn-btn1 popup-modal">
+                <i class="las la-plus-square"></i><span class="text">LogIn</span>
+              </a>
+            </div>
+          </li>-->
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

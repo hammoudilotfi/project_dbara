@@ -1,0 +1,65 @@
+
+<ngx-ui-loader></ngx-ui-loader>
+<div class="proDetails section-padding2  sectionBg1">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a routerLink="/recette">Reccetes</a></li>
+            <li class="breadcrumb-item"><a >Wishlist</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+
+    <div class="row">
+      <section class="recentListing">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-7 col-md-10 col-sm-10">
+              <div class="section-tittle text-center mb-50">
+                <h2 class="tittle  "><span class="shape"></span> Vos recettes sauvegardées</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4" *ngFor="let recette of data">
+
+              <div class="content" style="display: block;" >
+                <a routerLink="/recette/detail/{{recette?.id }}">
+                  <img src="{{recette.photo}}">
+                  <div class="hover-image"></div>
+                  <div class="playIcon"></div>
+                  <div class="bottomForRecipe">
+                    <div class="oneDetail">
+                      <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_ingredients.svg"></div>
+                      <font>Temperature<br>
+                        <span>{{recette.temperature}}°C</span></font> </div>
+                    <div class="oneDetail">
+                      <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_cuisson.svg"></div>
+                      <font>Temps de cuisson<br>
+                        <span>{{recette.temps_prepartion}} MIN</span></font> </div>
+                    <div class="oneDetail">
+                      <div class="forIMG"><img src="https://dbara.tn/frontoffice/img/SVG/ic_nombre.svg"></div>
+                      <font>Niveau de difficulté<br>
+                        <span>Moyen</span></font> </div>
+                  </div>
+                  <div class="nameRecipe">{{recette.nom}}</div>
+                  <div class="nameCategory">Dbara Zemneya</div>
+                </a> </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+</div>

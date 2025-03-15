@@ -1,0 +1,72 @@
+<ngx-ui-loader></ngx-ui-loader>
+<!-- Modal -->
+<div class="body-overlay-desktop"></div>
+<div class="modal-wrapper text-center">
+  <div class="close-icon">
+    <i class="las la-times"></i>
+  </div>
+  <h2 class="modialTittle">Post Your <span>Ad</span> ?</h2>
+  <div class="btn-wrapper">
+    <a href="add_listing_Details.html" class="cmn-btn02">Yes , Post ad</a>
+  </div>
+</div>
+
+<!--login Area s t a r t-->
+<div class="loginArea section-padding2">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 p-0 loginLeft-img">
+        <div class="loginLeft-img">
+          <div class="login-cap">
+            <h3 class="tittle">Login & Start Eating</h3>
+<!--            <p class="pera">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>-->
+          </div>
+          <div class="login-img">
+            <img src="https://static.wixstatic.com/media/e59570_9fcbe941ac7d4b539b1812031231825b~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e59570_9fcbe941ac7d4b539b1812031231825b~mv2.jpg" alt="img" class="loginImg">
+          </div>
+        </div>
+      </div>
+      <form (ngSubmit)="onLogin()" class="col-xl-7 col-lg-7 login-Wrapper">
+        <div class="row">
+          <div class="col-md-12">
+            <label class="infoTitle">Phone</label>
+            <div class="input-form">
+              <input type="text" placeholder="Enter your Phone Number" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+              <div class="icon"><i class="lar la-envelope icon"></i></div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label class="infoTitle">Password</label>
+            <div class="input-form">
+              <input type="password" placeholder="Enter password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+              <div class="icon"><i class="las la-lock icon"></i></div>
+
+            </div>
+          </div>
+          <!--Forget passwords -->
+          <div class="col-sm-12">
+            <div class="passRemember mt-20">
+              <label class="checkWrap2">Remember me
+                <input class="effectBorder" type="checkbox"  [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}">
+                <span class="checkmark"></span>
+              </label>
+              <!-- forgetPassword -->
+             <!-- <div class="forgetPassword mb-25">
+                <a (click)="openPopup()" class="forgetPass">Forget passwords?</a>
+              </div>-->
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="btn-wrapper text-center">
+              <button type="submit" class="cmn-btn4 w-100 mb-60">Login</button>
+              <a href="#" class="cmn-btn-outline0  mb-20 w-100"><img src="assets/img/icon/googleIocn.svg" alt="images" class="icon"> Log in With Google</a>
+              <a href="#" class="cmn-btn-outline0 mb-20  w-100"><img src="assets/img/icon/fbIcon.svg" alt="images" class="icon">Log in With Facebook</a>
+              <p class="sinUp"><span>Don’t have an account? </span><a routerLink="/register" class="singApp">Sign Up</a></p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End-of login Area -->

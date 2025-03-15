@@ -1,0 +1,90 @@
+.ribbon-top-left {
+  top: -10px;
+  left: -34px;
+}
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+.newRibbon span {
+  right: 0;
+  top: 20px;
+  transform: rotate(-45deg);
+  font-family: tahoma;
+  font-size: 13px;
+  left: -35px;
+  padding: 8px 0px;
+}
+.ribbon-top-left span {
+  right: -17px;
+  top: 28px;
+  transform: rotate(-45deg);
+  font-family: tahoma;
+  font-size: 13px;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 12px 0;
+  background-color: #ef7916;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 15px nexaB;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-align: center;
+}
+.owl-items a img {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 270px;
+  height: 270px;
+  max-width: 100%;
+}
+.carousel-items span {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  width: 270px;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  font: bold 20px nexaB;
+  text-transform: uppercase;
+  padding: 0 50px;
+  max-width: 100%;
+}
+.carousel-items .hover-image {
+  background-color: rgba(0,0,0,0.5);
+}
+.hover-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 270px;
+  height: 270px;
+  max-width: 100%;
+}
+.bottomEncart {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  max-width: 270px;
+}

@@ -1,0 +1,58 @@
+<ngx-ui-loader></ngx-ui-loader>
+<div class="proDetails section-padding2  sectionBg1">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a >Account</a></li>
+            <li class="breadcrumb-item"><a >My account</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+
+    <div class="row">
+      <section class="recentListing">
+        <div class="container">
+          <div class="row">
+            <div class="accountWrapper mb-24" >
+              <!-- user -->
+              <div class="userProfile mb-24">
+                <div class="recentImg">
+                  <img src="https://png.pngtree.com/png-vector/20190704/ourlarge/pngtree-businessman-user-avatar-free-vector-png-image_1538405.jpg" height="100" width="100" alt="images">
+                </div>
+                <div class="recentCaption">
+                  <div class="cap">
+                    <h5><a href="#" class="featureTittle">{{data?.nom}} {{data?.prenom}}</a></h5>
+                    <p class="featureCap">{{data?.sexe}}</p>
+                  </div>
+                  <div class="btn-wrapper">
+                    <a routerLink="/edit-profile" class="cmn-btn-outline2">Edit Profile</a>
+                    <a (click)="openPopup()" class="cmn-btn-outline2 ml-5">Change Password</a>
+                  </div>
+                </div>
+              </div>
+              <!-- infoSingle -->
+              <div class="infoSingle">
+                <ul class="listing">
+                                  <li class="listItem"><i class="las la-map-marker-alt icon"></i>{{data?.pin}}</li>
+                  <li class="listItem"><i class="lar la-envelope-open icon"></i>{{data?.email}}</li>
+                  <li class="listItem"><i class="las la-phone icon"></i>{{data?.tel}}</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+</div>
+

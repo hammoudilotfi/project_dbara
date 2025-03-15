@@ -1,0 +1,54 @@
+<div class="proDetails section-padding2  sectionBg1">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a >Jeux Coucours</a></li>
+            <li class="breadcrumb-item"><a >Vote Pour Jeux Coucours </a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+
+    <div class="listingView  customTab-content-2">
+      <div class="row justify-content-center">
+        <div class="col-xl-8 col-lg-7 col-md-10 col-sm-10">
+          <div class="section-tittle text-center mb-50">
+            <h5 class="tittle  "><span class="shape"></span>Apprenez à cuisiner tout en gagnant de beaux cadeaux.
+              c’est seulement chez Dbara, restez connecté(e)s </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-xl-6 col-lg-12" *ngFor="let jeux of data">
+          <div class="singleFlexitem mb-24">
+            <div class="recentImg">
+              <img src="{{jeux?.imageUrl}}" alt="images" style="max-height: 160px; max-width: 250px">
+            </div>
+            <div class="recentCaption">
+              <h5 class="featureTittle"> Vote for this </h5>
+              <p class="featureCap">Tunis· <strong class="subCap">24hrs ago</strong></p>
+              <p class="featureCap">{{ voteCounts[jeux.id] }} <strong class="subCap">users voted for this image</strong></p>
+
+              <div class="btn-wrapper viewItems">
+                <select class="niceSelect" [(ngModel)]="selectedValues[jeux.id]">
+                  <option *ngFor="let value of values" [value]="value">{{ value }}</option>
+                </select>
+                <button class="cmn-btn4 ml-5" (click)="submit(jeux.id)">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Jeux Concours</h2>
+
+<mat-dialog-content class="newDTest" id="jeuConcours">
+
+<div class="row">
+  <div class="col-4">
+    <div id="blocFirst"> <img src="https://dbara.tn/frontoffice/img/photos.png" class="photosAlbum">
+  </div>
+
+</div>
+  <div class="col-8">
+    <p>
+      <strong style="color:#ea5b0c">A7la Tawlla</strong> <br>
+      Votre table ramadanesque dima meziana , prenez la en photo et participez au jeu ou votez. Des gros lots vous attendent! <br>
+      <br>
+      <input style="width: 100%" type="file" class="custom-file-input" (change)="onFileSelected($event)" accept="image/*">
+    </p>
+    <div class="btn-wrapper mb-20 ">
+      <a (click)="navigate()" style="cursor: pointer" class="cmn-btn-outline4 mr-10"><i class="lar la-eye icon"></i>Vote</a>
+      <a (click)="uploadImage()" class="cmn-btn4" style="cursor: pointer" >Upload Image</a>
+    </div>
+  </div>
+</div>
+
+</mat-dialog-content>
+<hr style="margin: 0; border-bottom: 1px
+ solid #CCC;">
+<mat-dialog-actions align="end">
+  <div class="btn-wrapper">
+    <a (click)="closeDialog()" class="cmn-btn-outline2">Close</a>
+  </div>
+</mat-dialog-actions>

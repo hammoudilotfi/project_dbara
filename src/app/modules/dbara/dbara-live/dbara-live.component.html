@@ -1,0 +1,47 @@
+
+<ngx-ui-loader></ngx-ui-loader>
+<div class="proDetails section-padding2  sectionBg1">
+  <div class="container">
+    <!-- Bread Crumb S t a r t -->
+    <div class="row mb-40">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a >Dbara</a></li>
+            <li class="breadcrumb-item"><a >Dabara Live</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End-of Bread Crumb-->
+
+    <div class="row">
+      <section class="recentListing section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4" *ngFor="let recette of data">
+
+              <div class="content" style="display: block;" >
+                <a (click)="openYoutubeDialog(recette.video)">
+                  <img src="{{recette.photo}}">
+                  <div class="hover-image"></div>
+                  <div class="playIcon"></div>
+                  <div class="nameRecipe">{{recette.nom}}</div>
+                  <div class="nameCategory">Regarder</div>
+                </a> </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+    </div>
+  </div>
+</div>
+<ng-template #videoDialog>
+  <iframe width="100%" height="98.2%" [src]="currentVideoUrl" frameborder="0" allowfullscreen></iframe>
+</ng-template>
